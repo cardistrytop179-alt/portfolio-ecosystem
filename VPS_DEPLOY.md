@@ -70,7 +70,7 @@ psql "postgresql://portfolio_user:<DB_PASSWORD>@localhost:5432/portfolio" -c "\c
 ```bash
 mkdir -p /opt
 cd /opt
-git clone https://github.com/cardistrytop179-alt/portfolio.git portfolio
+git clone https://github.com/cardistrytop179-alt/portfolio-ecosystem.git portfolio
 cd portfolio/backend
 npm install --no-audit --no-fund
 npx prisma generate
@@ -206,3 +206,4 @@ pm2 restart portfolio-backend
 - **Rate limit or cold IP**: `/api/analyze` is rate-limited to 20 req / 5 min per IP — normal.
 - **sslip.io edge cases**: use the dashed form (`203-0-113-42.sslip.io`), some DNS resolvers dislike the dotted form.
 - **Existing bot conflict**: only if both bots listen on the same port. Run `ss -tlnp` to verify the port you picked for the backend (default 3001 here) is free.
+
