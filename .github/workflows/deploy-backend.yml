@@ -1,0 +1,15 @@
+name: Deploy Backend (placeholder)
+
+on:
+  push:
+    paths:
+      - 'backend/**'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Notify
+        run: |
+          echo "This workflow is a template. Connect the repository to Render / Heroku or adapt this file to your provider. See README_DEPLOY.md for instructions."

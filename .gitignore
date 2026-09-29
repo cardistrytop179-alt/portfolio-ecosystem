@@ -1,0 +1,42 @@
+ # Dependencies
+node_modules/
+**/node_modules/
+
+# Environment variables (NEVER commit tokens!)
+.env
+backend/.env
+**/.env.local
+**/.env.production
+
+# Build outputs
+dist/
+backend/dist/
+frontend/dist/
+
+# Frontend lockfile: intentionally uncommitted.
+# Windows-generated npm locks omit Linux-only rollup native bindings
+# (@rollup/rollup-linux-x64-gnu) and break Vercel/Cloudflare CI builds.
+# Each CI runner regenerates its own lock at install time.
+frontend/package-lock.json
+
+# Database
+*.db
+*.db-journal
+backend/prisma/*.db
+
+# Logs
+backend/logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/settings.json
+
+# Python
+__pycache__/
+**/__pycache__/
+*.pyc

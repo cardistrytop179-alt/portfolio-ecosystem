@@ -1,0 +1,24 @@
+{
+  "name": "miron-fullstack-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Telegram Bot + Mini App Portfolio Ecosystem",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && nodemon src/server.js",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "npm run build:backend",
+    "build:backend": "cd backend && npm run build",
+    "build:frontend": "cd frontend && npm run build",
+    "start": "cd backend && npx prisma generate && node dist/server.js"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2"
+  },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ]
+}

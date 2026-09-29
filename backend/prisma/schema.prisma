@@ -1,0 +1,27 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          BigInt   @id @default(autoincrement())
+  username    String?
+  telegramId  BigInt   @unique
+  visits      Int      @default(0)
+  lastVisit   DateTime @updatedAt
+  
+  // Данные из калькулятора
+  calcHistory String?    // Храним последние расчеты юзера (в формате JSON-строки)
+  
+  isContacted Boolean @default(false)
+  createdAt   DateTime @default(now())
+  
+  @@map("users")
+}
